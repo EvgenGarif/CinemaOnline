@@ -1,0 +1,157 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    /*max-width: 500px;*/
+}
+
+.sub-nav-active a {
+    font-weight: bold !important;
+}
+
+.admin-heading {
+    display: inline-block;
+    max-width: 300px;
+}
+
+.admin-add-btn {
+    display: inline-block;
+    width: 250px;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.timeslot-tag {
+    display: inline-block;
+    width: 90px;
+    text-align: center;
+}
+
+.movie-list-section {
+    padding: 15px 0;
+    border-bottom: 1px solid gray;
+}
+
+.movie-list-header {
+    padding-bottom: 10px;
+}
+
+.img-movies-list {
+    max-width: 100%;
+    border: 2px solid lightgray;
+}
+
+.rating-movies-list {
+    display: inline-block;
+    float: right;
+}
+
+.name-movies-list {
+    display: inline-block;
+    max-width: 100px;
+    font-weight: bold;
+}
+
+.movie-list-footer {
+    padding-top: 10px;
+}
+
+.genres-movies-list {
+    display: inline-block;
+}
+
+.age-movies-list {
+    display: inline-block;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 5px 0;
+    margin: 5px;
+    float: right;
+    text-align: center;
+}
+
+.cinema-row {
+    padding: 2px 0;
+}
+
+.cinema-row-label {
+    min-width: 50px;
+    display: inline-block;
+}
+
+.cinema-seat {
+    display: inline-block;
+}
+
+.cinema-seat input[type=checkbox] {
+    visibility: hidden;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); 
+    clip: rect(1px, 1px, 1px, 1px); 
+}
+
+.cinema-seat input[type=checkbox] + label {
+    color: gray;
+    border: 1px solid lightgray;
+    border-radius: 10%;
+    min-width: 30px;
+    min-height: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+    .cinema-seat input[type=checkbox]:checked + label {
+        color: darkorange;
+        border: 1px solid orange;
+        background-color: white;
+    }
+
+.cinema-seat.is-reserved .seat-label{
+    background-color: lightgray
+}
+
+.cinema-seat.is-sold .seat-label {
+    background-color: lightblue
+}
+
+.search-btn {
+    display: inline-block;
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    display: inline-block;
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
+
+

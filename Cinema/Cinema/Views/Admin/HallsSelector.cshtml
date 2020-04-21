@@ -1,0 +1,22 @@
+﻿@using Cinema.Models.Domain
+@model int? 
+
+@{
+    var hallsList = (Hall[]) ViewData["HallsList"];
+}
+
+<div class="form-group">
+    <label>Hall</label>
+    <select name="HallId" id="HallId" class="form-control">
+        @if (hallsList != null)
+        {
+            foreach (var hall in hallsList)
+            {
+                <option value="@hall.Id" @(Model != null && hall.Id == Model ?
+                                               "selected" : string.Empty)>
+                    @hall.Name
+                </option>
+            }
+        }
+    </select>
+</div>

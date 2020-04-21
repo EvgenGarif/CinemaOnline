@@ -1,0 +1,66 @@
+﻿@using Cinema.Extensions
+@model Cinema.Models.Tickets.MovieListItem[]
+
+<div class="row">
+    <h2 class="admin-heading">Search</h2>
+    <div class="search-input">
+        <input class="form-control js-search-film-term" name="term" id="term">
+    </div>
+    <div class="search-btn">
+        <input class="btn btn-success btn-block js-search-film-submit" type="button" value="Search" />
+    </div>
+</div>
+
+<div class="row js-search-result-container">
+</div>
+
+<div class="hidden js-search-result-item">
+    {{#each Result}}
+    <div class="movie-list-section">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="movie-list-header">
+                    {{#with Movie}}
+                    <div class="name-movies-list">{{Title}}</div>
+                    <div class="rating-movies-list">{{Rating}}</div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                {{#with Movie}}
+                <div>
+                    {{#if ImgUrl}}
+                    <img class="img-rounded img-movies-list" src="{{ImgUrl}}" />
+                    {{/if}}
+                </div>
+                <div class="movie-list-footer">
+                    <div class="genres-movie-list">
+                        <div>
+                            {{FormattedGenres}}
+                        </div>
+                        <div>
+                            {{FormattedDuration}}
+                        </div>
+                    </div>
+                    <div class="age-movies-list">
+                        {{MinAge}}+
+                    </div>
+                </div>
+                {{/with}}
+            </div>
+            <div class="col-md-9">
+                {{#each AvailableTimeslots}}
+                <div class="timeslot-tag">
+                    <a class="btn btn-default btn-block" href="{{BuyTicketUrl}}">{{FormattedStartTime}}</a>
+                    <span>{{Cost}} P</span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+

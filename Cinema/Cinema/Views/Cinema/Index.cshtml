@@ -1,0 +1,18 @@
+﻿@model Cinema.Models.CinemaViewModel
+Hello, word
+<p/>
+ViewData: @ViewData["Parm"]
+<p />
+ViewBag: @ViewBag.Param
+
+@section Ahtor
+{
+    @Model.Author
+}
+
+@if (!string.IsNullOrEmpty(Model.Author))
+{
+    <text>
+        Author is specified
+    </text>
+}

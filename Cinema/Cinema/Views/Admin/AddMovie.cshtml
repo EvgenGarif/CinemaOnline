@@ -1,0 +1,66 @@
+﻿@using Cinema.Models
+@using Cinema.Models.Domain
+@model Cinema.Models.Domain.Movie
+
+@section SubNav
+{
+    @Html.Partial("SubNavigation", SubNavigationMenu.Movies)
+}
+
+<h2> Add Movie</h2>
+
+@using (Html.BeginForm("AddMovie", "Admin"))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.Title)
+        @Html.EditorFor(x => x.Title, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(x => x.Title)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Description)
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = "5" })
+        @Html.ValidationMessageFor(x => x.Description)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.ImgUrl)
+        @Html.EditorFor(x => x.ImgUrl, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(x => x.ImgUrl)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Director)
+        @Html.EditorFor(x => x.Director, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(x => x.Director)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.ReleaseDate)
+        @Html.EditorFor(x => x.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(x => x.ReleaseDate)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Duration)
+        @Html.EditorFor(x => x.Duration, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(x => x.Duration)
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.MinAge)
+        @Html.EditorFor(x => x.MinAge, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(x => x.MinAge)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Rating)
+        @Html.EditorFor(x => x.Rating, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(x => x.Rating)
+    </div>
+
+    @Html.Partial("Genres",Model?.Genres)
+
+    <input type="submit" value="Add Movie" class="btn btn-success" />
+}

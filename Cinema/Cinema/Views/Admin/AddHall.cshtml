@@ -1,0 +1,28 @@
+﻿@using Cinema.Models
+@model Cinema.Models.Domain.Hall
+
+@section SubNav
+{
+    @Html.Partial("SubNavigation", SubNavigation.Halls)
+}
+
+<h2> Add Movie</h2>
+
+@using (Html.BeginForm("CreateHall", "Admin"))
+{
+    <div>
+        @Html.LabelFor(x => x.Name)
+        @Html.EditorFor(x => x.Name, new {htmlAttributes =new {@class = "form-control"}})
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.Places)
+        @Html.EditorFor(x => x.Places, new {htmlAttributes =new {@class = "form-control"}})
+        @Html.ValidationMessageFor(x => x.Places)
+    </div>
+
+    <input type="submit" value="Save changes" class="btn btn-success"/>
+
+}
+

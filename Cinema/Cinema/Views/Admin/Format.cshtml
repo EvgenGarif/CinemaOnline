@@ -1,0 +1,20 @@
+﻿@using Cinema.Models.Domain
+@using Cinema.Utils
+@model Cinema.Models.Domain.Format
+
+@{
+    var formats = EnumUtil.GetValues<Format>();
+
+}
+
+<div class="form-group">
+    <label>Format</label>
+    <select name="Format" id="Format" class="form-control">
+        @foreach (var format in formats)
+        {
+            <option value="@format">@format</option>
+        }
+
+    </select>
+</div>
+
